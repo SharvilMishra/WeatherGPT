@@ -1,0 +1,6 @@
+{
+  "name": "WeatherGPT",
+  "description": "Multilingual AI-Powered Weather Decision Intelligence Platform transforming forecasts, air quality, and historical data into actionable personal recommendations.",
+  "requestFramePermissions": ["microphone", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
