@@ -201,7 +201,7 @@ export const WeatherGptChat: React.FC<WeatherGptChatProps> = ({
   return (
     <div className="max-w-4xl mx-auto space-y-4 pb-12">
       
-      {/* GROUNDED ARCHITECTURE CONTEXT BADGE (SIH Rule) */}
+      {/* Grounded weather context badge */}
       <div className="bg-white border border-gray-200 rounded-xl p-3 flex flex-wrap items-center justify-between gap-3 text-xs shadow-2xs">
         <div className="flex items-center gap-2">
           <span className="p-1 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-200">
@@ -293,7 +293,7 @@ export const WeatherGptChat: React.FC<WeatherGptChatProps> = ({
 
       {/* SAMPLE QUICK PROMPT CHIPS */}
       <div className="space-y-1.5">
-        <span className="text-[11px] text-gray-500 font-medium">Try asking SIH Example Questions:</span>
+        <span className="text-[11px] text-gray-500 font-medium">Try asking:</span>
         <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
           {samplePrompts.map((prompt, idx) => (
             <button

@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Settings, Globe, Thermometer, Wind, Volume2, Clock, Bike } from 'lucide-react';
+import { X, Settings, Globe, Thermometer, Wind, Volume2, Bike, Moon, Sun } from 'lucide-react';
 import { UserPreferences, SupportedLanguage } from '../types/weather';
 import { SUPPORTED_LANGUAGES, getTranslation } from '../services/i18n';
 
@@ -44,6 +44,27 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
 
         {/* Body */}
         <div className="p-4 sm:p-6 space-y-5 max-h-[70vh] overflow-y-auto">
+
+          {/* Theme switch */}
+          <div className="p-4 bg-gray-50 rounded-xl border border-gray-200 flex items-center justify-between">
+            <div className="flex items-center gap-2.5">
+              {preferences.theme === 'dark' ? <Moon className="w-5 h-5 text-blue-600" /> : <Sun className="w-5 h-5 text-amber-500" />}
+              <div>
+                <span className="text-sm font-bold text-gray-900 block">Dark theme</span>
+                <span className="text-xs text-gray-500 font-medium">Use a darker look across WeatherGPT</span>
+              </div>
+            </div>
+            <button
+              type="button"
+              role="switch"
+              aria-checked={preferences.theme === 'dark'}
+              aria-label="Enable dark theme"
+              onClick={() => onUpdatePreferences({ theme: preferences.theme === 'dark' ? 'light' : 'dark' })}
+              className={`w-12 h-6 rounded-full transition-colors relative cursor-pointer ${preferences.theme === 'dark' ? 'bg-blue-600' : 'bg-gray-300'}`}
+            >
+              <span className={`w-4 h-4 rounded-full bg-white shadow-xs transition-transform absolute top-1 ${preferences.theme === 'dark' ? 'left-7' : 'left-1'}`} />
+            </button>
+          </div>
           
           {/* Language Selection */}
           <div className="space-y-1.5">
@@ -165,7 +186,8 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
         </div>
 
         {/* Footer */}
-        <div className="p-4 border-t border-gray-100 bg-gray-50 flex justify-end">
+        <div className="p-4 border-t border-gray-100 bg-gray-50 flex items-center justify-between">
+          <span className="text-[11px] text-gray-500 font-medium">Created by @Sharvil Mishra</span>
           <button
             onClick={onClose}
             className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-xs transition-all cursor-pointer"

@@ -31,7 +31,7 @@ const DEFAULT_PREFERENCES: UserPreferences = {
   commuteStartTime: '08:30',
   commuteEndTime: '18:00',
   commuteType: 'bike',
-  theme: 'dark',
+  theme: 'light',
 };
 
 export default function App() {
@@ -61,6 +61,11 @@ export default function App() {
       // ignore
     }
   }, [preferences]);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = preferences.theme ?? 'light';
+    document.documentElement.style.colorScheme = preferences.theme ?? 'light';
+  }, [preferences.theme]);
 
   // Load weather when selectedLocation changes
   useEffect(() => {

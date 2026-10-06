@@ -91,7 +91,7 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 gap-4">
           
-          {/* Logo & SIH Badge */}
+          {/* Product logo */}
           <div className="flex items-center gap-3 shrink-0">
             <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center shadow-xs">
               <CloudSun className="w-5 h-5 text-blue-600" />
@@ -100,9 +100,6 @@ export const Header: React.FC<HeaderProps> = ({
               <div className="flex items-center gap-2">
                 <span className="text-xl font-bold tracking-tight text-gray-900">
                   WeatherGPT
-                </span>
-                <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
-                  SIH26068
                 </span>
               </div>
               <p className="text-[11px] text-gray-500 hidden sm:block font-medium">

@@ -17,7 +17,7 @@ app.get('/api/health', (_req, res) => {
   res.json({
     status: 'ok',
     geminiConfigured: !!apiKey,
-    platform: 'WeatherGPT - Smart India Hackathon SIH26068',
+    platform: 'WeatherGPT - AI Weather Decision Intelligence',
     timestamp: new Date().toISOString(),
   });
 });
@@ -67,7 +67,7 @@ app.post('/api/chat', async (req, res) => {
     }, null, 2) : 'No live context provided; deduce from meteorological principles for Indian locations.';
 
     if (ai) {
-      const systemPrompt = `You are WeatherGPT, the India-first AI-Powered Weather Decision Intelligence Platform (Smart India Hackathon SIH26068).
+      const systemPrompt = `You are WeatherGPT, an India-first AI-Powered Weather Decision Intelligence Platform.
 Your motto: "Don't just know the weather. Understand what it means for you."
 
 Never invent weather data. Ground your reasoning in the provided real-time weather and forecast context. Give a direct recommendation first, then relevant weather numbers and a safer time window or mitigation. Adapt your response to the user's language and requested language ('${language}').
